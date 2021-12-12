@@ -1,0 +1,30 @@
+server:
+  port: 5055
+spring:
+  main:
+    banner-mode: off
+  application:
+    name: spring-boot-kotlin-example
+  jpa:
+    hibernate:
+      ddl-auto: create
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  datasource:
+    initilaization-mode: always
+    platform: postgres
+    url: "jdbc:postgresql://localhost:5432/example"
+    username: "root"
+    password: "root"
+  liquibase:
+    change-log: classpath:liquibase/master.xml
+  security:
+    user:
+      username: "root"
+      password: "root"
+logging:
+  level:
+    org:
+      springframework: ERROR
+devtools:
+  restart:
+    enabled: true
